@@ -1,0 +1,1 @@
+ls -d */ | tr '\n' ' ' | tr -d '/' | tr a-z A-Z
