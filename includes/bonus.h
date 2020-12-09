@@ -19,11 +19,48 @@
 # include <string.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <math.h>
 
 # include "libft.h"
 
 # define SHRINKER ( 1.247 )
 
-size_t	ft_shrinking_gap(size_t gap);
+typedef struct	s_dot3
+{
+	double	x;
+	double	y;
+	double	z;
+}				t_dot3;
+
+typedef struct	s_way
+{
+	double	dx;
+	double	dy;
+	double	dz;
+}				t_way;
+
+typedef struct	s_equation
+{
+	int		number;
+	double	*roots;
+}				t_equation;
+
+size_t			ft_shrinking_gap(size_t gap);
+t_equation		*ft_quadratic(double a, double b, double c);
+t_dot3			ft_newdot3(double x, double y, double z);
+void			ft_change_dot(t_dot3 *point, double x, double y, double z);
+t_dot3			ft_movdot3(t_dot3 point, t_way vector);
+double			ft_lenline3(t_dot3 a, t_dot3 b);
+t_way			ft_newway3(double dx, double dy, double dz);
+t_way			ft_mulway(t_way vector, double scalar);
+double			ft_waylenght(t_way vec);
+t_way			ft_wayfromdots(t_dot3 beg, t_dot3 end);
+t_way			ft_vecpway(t_way a, t_way b);
+t_way			ft_sumway(t_way v1, t_way v2);
+double			ft_scpway(t_way v1, t_way v2);
+t_way	ft_rotx_way(t_way vector, double alfa);
+t_way	ft_roty_way(t_way vector, double alfa);
+t_way	ft_rotz_way(t_way vector, double alfa);
+t_way	ft_rotway(t_way vector, t_way axis);
 
 #endif

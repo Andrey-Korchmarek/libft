@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_shrinking_gap.c                                 :+:      :+:    :+:   */
+/*   ft_wayfromdots.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mashley <mashley@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mashley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 18:58:45 by mashley           #+#    #+#             */
-/*   Updated: 2019/09/16 12:30:27 by mashley          ###   ########.fr       */
+/*   Created: 2020/11/21 17:56:59 by mashley           #+#    #+#             */
+/*   Updated: 2020/11/21 17:57:02 by mashley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bonus.h"
 
-size_t	ft_shrinking_gap(size_t gap)
+t_way	ft_wayfromdots(t_dot3 beg, t_dot3 end)
 {
-	size_t	integer;
-	float	real;
+	t_way vector;
 
-	real = gap / SHRINKER;
-	integer = (size_t)real;
-	if (real - integer >= 0.5)
-		return (integer + 1);
-	else
-		return (integer);
+	vector.dx = end.x - beg.x;
+	vector.dy = end.y - beg.y;
+	vector.dz = end.z - beg.z;
+	return (vector);
 }

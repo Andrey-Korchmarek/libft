@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_shrinking_gap.c                                 :+:      :+:    :+:   */
+/*   ft_waylenght.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mashley <mashley@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mashley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 18:58:45 by mashley           #+#    #+#             */
-/*   Updated: 2019/09/16 12:30:27 by mashley          ###   ########.fr       */
+/*   Created: 2020/11/21 17:57:13 by mashley           #+#    #+#             */
+/*   Updated: 2020/11/21 17:57:15 by mashley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bonus.h"
 
-size_t	ft_shrinking_gap(size_t gap)
+double	ft_waylenght(t_way vec)
 {
-	size_t	integer;
-	float	real;
+	double	length;
 
-	real = gap / SHRINKER;
-	integer = (size_t)real;
-	if (real - integer >= 0.5)
-		return (integer + 1);
-	else
-		return (integer);
+	length = sqrt(pow(vec.dx, 2) + pow(vec.dy, 2) + pow(vec.dz, 2));
+	return (length);
 }

@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range_stop.c                                    :+:      :+:    :+:   */
+/*   ft_rotway.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mashley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/07 17:02:22 by mashley           #+#    #+#             */
-/*   Updated: 2020/08/07 17:02:26 by mashley          ###   ########.fr       */
+/*   Created: 2020/12/09 18:39:28 by mashley           #+#    #+#             */
+/*   Updated: 2020/12/09 18:39:34 by mashley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/tmp.h"
+#include "bonus.h"
 
-int	ft_range_stop(int count, int stop)
+t_way	ft_rotway(t_way vector, t_way axis)
 {
-	int sign;
+	t_way result;
 
-	(void)sign;
-	if (stop == 0)
-		return (stop);
-	if (stop < 0)
-	{
-		if (count == stop)
-			return (-1);
-		if (count < stop || count > -1)
-			return (0);
-		return (count - 1);
-	}
-	if (count == stop)
-		return (1);
-	if (count > stop || count < 1)
-		return (0);
-	return (count + 1);
+	result = ft_rotx_way(vector, axis.dx * M_PI / 180);
+	result = ft_roty_way(vector, axis.dy * M_PI / 180);
+	result = ft_rotz_way(vector, axis.dz * M_PI / 180);
+	return (result);
 }

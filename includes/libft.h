@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mashley <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sreyne <sreyne@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/19 19:14:01 by mashley           #+#    #+#             */
-/*   Updated: 2020/07/19 19:14:06 by mashley          ###   ########.fr       */
+/*   Updated: 2020/12/08 20:01:53 by sreyne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@
 
 # include "get_next_line.h"
 # include "bonus.h"
+# include "ft_printf.h"
 # include "tmp.h"
+
+# define NUMBER 600
 
 typedef struct		s_list
 {

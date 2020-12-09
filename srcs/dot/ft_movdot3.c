@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_shrinking_gap.c                                 :+:      :+:    :+:   */
+/*   ft_movdot3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mashley <mashley@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mashley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 18:58:45 by mashley           #+#    #+#             */
-/*   Updated: 2019/09/16 12:30:27 by mashley          ###   ########.fr       */
+/*   Created: 2020/11/21 18:33:50 by mashley           #+#    #+#             */
+/*   Updated: 2020/11/21 18:33:53 by mashley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bonus.h"
 
-size_t	ft_shrinking_gap(size_t gap)
+t_dot3	ft_movdot3(t_dot3 point, t_way vector)
 {
-	size_t	integer;
-	float	real;
+	t_dot3	result;
 
-	real = gap / SHRINKER;
-	integer = (size_t)real;
-	if (real - integer >= 0.5)
-		return (integer + 1);
-	else
-		return (integer);
+	result.x = point.x + vector.dx;
+	result.y = point.y + vector.dy;
+	result.z = point.z + vector.dz;
+	return (result);
 }
